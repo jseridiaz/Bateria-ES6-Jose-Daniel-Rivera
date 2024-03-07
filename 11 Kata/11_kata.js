@@ -47,11 +47,38 @@ const users = [
 ]
 let arraySound = []
 
+let counter = 0
 for (const user of users) {
-  for (const sound in user) {
-    if (sound == 'favoritesSounds') {
-      let newA = Object.keys(user[sound]).map((element) => element)
-      let Array = console.log(newA)
+  for (const value in user.favoritesSounds) {
+    arraySound.push(value)
+  }
+}
+
+// for (let i = 0; i < arraySound.length; i++) {
+//   const element = arraySound[i]
+//   const counter = 0
+
+//   for (let j = 1; j < arraySound.length; j++) {
+//     const duplicate = arraySound[j]
+//     if (duplicate === element) {
+//       counterOf++
+//       arraySound.splice(j, 1)
+//       j--
+//     }
+//   }
+//   console.log(`${element} se ha repetido ${counter} veces `)
+// }
+
+let counterSound = {}
+
+for (const user of users) {
+  for (const sound in user.favoritesSounds) {
+    let nameOfsound = sound
+    if (counterSound[nameOfsound]) {
+      counterSound[nameOfsound]++
+    } else {
+      counterSound[nameOfsound] = 1
     }
   }
 }
+console.log(`Los valores repetidos son los siguientes:`, counterSound)

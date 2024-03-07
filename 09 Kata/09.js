@@ -33,11 +33,9 @@ let [...moviesAll] = movies
 let arrayFiltered = []
 
 for (const movie of movies) {
-  if (!arrayFiltered.includes(movie.categories)) {
-    for (const element of movie.categories) {
-      if (!arrayFiltered.includes(element)) {
-        arrayFiltered.push(element)
-      }
+  for (const element of movie.categories) {
+    if (!arrayFiltered.includes(element)) {
+      arrayFiltered.push(element)
     }
   }
 }

@@ -37,32 +37,16 @@ const users = [
 ]
 
 let sum = 0
+let counterOfsounds = 0
+
 for (const user of users) {
-  for (const key in user) {
-    if (key === 'favoritesSounds') {
-      console.log(user[key])
-      for (const style in user[key]) {
-        if (
-          style === 'waves' ||
-          style === 'rain' ||
-          style === 'firecamp' ||
-          style === 'shower' ||
-          style === 'train'
-        ) {
-          console.log(user[key][style])
-          for (const volume in user[key][style]) {
-            if (volume === 'volume') {
-              sum += user[key][style][volume]
-              console.log(sum)
-            }
-          }
-        }
-      }
-    }
+  for (const sound in user.favoritesSounds) {
+    sum += user.favoritesSounds[sound].volume
+    counterOfsounds++
   }
 }
-
-sum = sum / (users.length * 3)
-sum = parseFloat(sum.toFixed(4))
-
 console.log(sum)
+console.log(counterOfsounds)
+
+let average = sum / counterOfsounds
+console.log(average)
