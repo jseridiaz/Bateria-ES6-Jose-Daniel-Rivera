@@ -5,7 +5,24 @@
 //* preocupes! Busca información sobre la función de javascript Math.random()
 
 let rollDice = (caras) => {
-  return console.log(Math.ceil(Math.random() * caras))
+  const valor = Math.ceil(Math.random() * caras)
+  return valor
 }
 
-rollDice(6)
+let caras = 6
+let result = rollDice(caras)
+console.log(
+  `Se ha lanzado un dado de ${caras} lados y has obtenido un ${result}`
+)
+
+// const rollDice = (numFaces) => {
+//   const randomValue = Math.floor(Math.random() * numFaces) + 1;
+//   return randomValue;
+// };
+
+// // Ejemplo de uso:
+// const numFaces = 6; // Un dado de 6 caras
+// const result = rollDice(numFaces);
+// console.log(
+//   `Has lanzado un dado de ${numFaces} caras y obtuviste un ${result}.`
+// );

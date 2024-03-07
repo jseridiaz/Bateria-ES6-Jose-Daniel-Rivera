@@ -73,12 +73,13 @@ let counterSound = {}
 
 for (const user of users) {
   for (const sound in user.favoritesSounds) {
-    let nameOfsound = sound
-    if (counterSound[nameOfsound]) {
-      counterSound[nameOfsound]++
+    let valueSound = sound
+    if (counterSound[valueSound]) {
+      counterSound[valueSound]++
     } else {
-      counterSound[nameOfsound] = 1
+      counterSound[valueSound] = 1
     }
   }
 }
 console.log(`Los valores repetidos son los siguientes:`, counterSound)
+//*La introducción de valores al objeto funciona de forma diferente. Practicarlo

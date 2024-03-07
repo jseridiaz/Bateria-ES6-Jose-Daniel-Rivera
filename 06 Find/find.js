@@ -40,10 +40,13 @@ const mutations = [
 ]
 
 const encontrado = {
-  ...aliens.find((alien) => alien.name === 'Cucushumushu'),
-  mutation: {
-    ...mutations.find((mutation) => mutation.name === 'Porompompero')
+  ...aliens.find((alien) => alien.name == 'Paktu'),
+  mutacion: {
+    ...mutations.find(
+      (mutation) =>
+        mutation.description ==
+        'Hace que el alien pueda adquirir la habilidad de tocar el tambor'
+    )
   }
 }
-
 console.log(encontrado)
