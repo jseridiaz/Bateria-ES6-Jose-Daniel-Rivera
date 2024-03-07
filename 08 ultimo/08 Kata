@@ -14,5 +14,6 @@ const videogames = [
 
 let gamesRPG = videogames.filter((game) => game.genders.includes('RPG'))
 console.log(gamesRPG)
-let sumScore = gamesRPG.reduce((acc, game) => (acc += game.score), 0)
+let sumScore =
+  gamesRPG.reduce((acc, game) => (acc += game.score), 0) / videogames.length
 console.log(sumScore)
